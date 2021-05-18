@@ -8,20 +8,11 @@ osx_64: clean
 
 
 osx_32: clean
-	@echo "Building "
-	GOOS=darwin GOARCH=386 go build -o bin/main-osx-386 ./main/main.go
-
-freebsd_64: clean
-	@echo "Building "
-	GOOS=freebsd GOARCH=amd64 go build -o bin/main-freebsd ./main/main.go
-
-freebsd_32: clean
-	@echo "Building "
-	GOOS=freebsd GOARCH=386 go build -o bin/main-freebsd-386 ./main/main.go
+	@echo "Port removed from Go. See https://github.com/golang/go/issues/37610"
 
 linux_64: clean
 	@echo "Building "
- 	GOOS=linux GOARCH=amd64 go build -o bin/main-linux ./main/main.go
+	GOOS=linux GOARCH=amd64 go build -o bin/main-linux ./main/main.go
 
 linux_32: clean
 	@echo "Building "
@@ -36,4 +27,4 @@ windows_32: clean
 	GOOS=windows GOARCH=386 go build -o bin/main-windows-386.exe ./main/main.go
 
 run:
-	go run main.go
+	go run main/main.go
